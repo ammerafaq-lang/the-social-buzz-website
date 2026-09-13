@@ -6,9 +6,9 @@
       "category": "realestate",
       "format": "film",
       "platform": "YouTube",
-      "image": "https://i.ytimg.com/vi/k3sImhVtARQ/hqdefault.jpg",
-      "width": 480,
-      "height": 360,
+      "image": "/assets/brand/brand-gradient.webp",
+      "width": 1200,
+      "height": 1200,
       "url": "https://youtu.be/k3sImhVtARQ?si=NPoe5cs499ttAjSD",
       "roles": [
         "Creative direction",
@@ -21,9 +21,9 @@
       "sourceXref": 25802,
       "sourcePosition": 1,
       "publishedBy": "Farooq Syed",
-      "sourceNote": "The first PDF screenshot depicts private aviation, while its hyperlink points to the Palm Jumeirah beach mansion film. The linked film title is used here. The public card uses the linked video’s official YouTube thumbnail, with the supplied brand artwork as its fallback. The original PDF screenshot is retained as sourceImage.",
+      "sourceNote": "The first PDF screenshot depicts private aviation, while its hyperlink points to the Palm Jumeirah beach mansion film. The linked film title is used here. The public card starts with the supplied brand artwork and upgrades to the official YouTube thumbnail only after it loads. The original PDF screenshot is retained as sourceImage.",
       "sourceImage": "/assets/work/work-01.webp",
-      "thumbnailFallback": "/assets/brand/brand-gradient.webp"
+      "thumbnailUrl": "https://i.ytimg.com/vi/k3sImhVtARQ/hqdefault.jpg"
     },
     {
       "id": "work-02",

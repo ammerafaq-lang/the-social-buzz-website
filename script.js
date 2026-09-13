@@ -1,14 +1,15 @@
 'use strict';
 
-document.querySelectorAll('img[data-fallback]').forEach(image => {
-  const fallback = () => {
-    if (!image.dataset.fallback) return;
-    image.src = image.dataset.fallback;
-    delete image.dataset.fallback;
+function loadThumbnail(image) {
+  const url = image.dataset.thumbnail;
+  if (!url) return;
+  const thumbnail = new Image();
+  thumbnail.onload = () => {
+    if (image.dataset.thumbnail === url) image.src = url;
   };
-  image.addEventListener('error', fallback, {once:true});
-  if (image.complete && !image.naturalWidth) fallback();
-});
+  thumbnail.src = url;
+}
+document.querySelectorAll('img[data-thumbnail]').forEach(loadThumbnail);
 
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -96,12 +97,11 @@ function renderProject(id) {
   const source = viewer.querySelector('.viewer-original');
   const roles = viewer.querySelector('.viewer-roles');
   media.classList.toggle('is-reel', project.format === 'reel');
-  image.onerror = project.thumbnailFallback ? () => {
-    image.onerror = null;
-    image.src = project.thumbnailFallback;
-  } : null;
   image.src = project.image;
-  image.alt = `${project.title} — frame from Ammer Afaq’s portfolio`;
+  image.alt = `${project.title} — portfolio preview`;
+  if (project.thumbnailUrl) image.dataset.thumbnail = project.thumbnailUrl;
+  else delete image.dataset.thumbnail;
+  loadThumbnail(image);
   image.hidden = false;
   viewer.querySelector('#viewer-title').textContent = project.title;
   viewer.querySelector('#viewer-category').textContent = `${categories[project.category]} / ${project.url ? project.format : 'Portfolio still'}`;
