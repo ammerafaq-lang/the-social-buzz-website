@@ -1,49 +1,46 @@
 'use strict';
 
-// Keep content visible when scripting or motion is unavailable.
-if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('reveal-pending');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(element => {
-    if (element.getBoundingClientRect().top >= innerHeight) {
-      element.classList.add('reveal-pending');
-      observer.observe(element);
-    }
-  });
-}
+document.querySelectorAll('img[data-fallback]').forEach(image => {
+  const fallback = () => {
+    if (!image.dataset.fallback) return;
+    image.src = image.dataset.fallback;
+    delete image.dataset.fallback;
+  };
+  image.addEventListener('error', fallback, {once:true});
+  if (image.complete && !image.naturalWidth) fallback();
+});
 
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
-const pageSections = [document.querySelector('main'), document.querySelector('footer')];
+const main = document.querySelector('main');
+const footer = document.querySelector('footer');
 function setMenu(open, restoreFocus = false) {
+  if (!mobileMenu || !menuToggle) return;
   mobileMenu.classList.toggle('open', open);
   mobileMenu.inert = !open;
   mobileMenu.setAttribute('aria-hidden', String(!open));
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   document.body.classList.toggle('menu-open', open);
-  pageSections.forEach(section => { section.inert = open; });
+  if (main) main.inert = open;
+  if (footer) footer.inert = open;
   if (open) mobileMenu.querySelector('a').focus();
   else if (restoreFocus) menuToggle.focus();
 }
-menuToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open'), true));
-mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+menuToggle?.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open'), true));
+mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   setMenu(false);
-  const target = document.querySelector(link.getAttribute('href'));
-  target.setAttribute('tabindex', '-1');
-  target.focus({ preventScroll: true });
+  const destination = new URL(link.href);
+  if (destination.pathname === location.pathname && destination.hash) {
+    const target = document.getElementById(destination.hash.slice(1));
+    if (target) { target.tabIndex = -1; target.focus({preventScroll:true}); }
+  }
 }));
 document.addEventListener('keydown', event => {
-  if (!mobileMenu.classList.contains('open')) return;
+  if (!mobileMenu?.classList.contains('open')) return;
   if (event.key === 'Escape') setMenu(false, true);
   if (event.key === 'Tab') {
-    const lastLink = mobileMenu.querySelector('a:last-child');
+    const lastLink = mobileMenu.querySelector('a:last-of-type');
     if (event.shiftKey && document.activeElement === menuToggle) {
       event.preventDefault(); lastLink.focus();
     } else if (!event.shiftKey && document.activeElement === lastLink) {
@@ -51,102 +48,118 @@ document.addEventListener('keydown', event => {
     }
   }
 });
-matchMedia('(min-width: 951px)').addEventListener('change', event => {
+matchMedia('(min-width: 861px)').addEventListener('change', event => {
   if (event.matches) setMenu(false);
 });
 
+const projects = JSON.parse(document.getElementById('portfolio-data')?.textContent || '[]');
+const categories = {realestate:'Real estate',lifestyle:'Lifestyle',fashion:'Fashion & brands',recruitment:'Recruitment'};
+const projectMap = new Map(projects.map(project => [project.id, project]));
+const cards = [...document.querySelectorAll('.work-card')];
 const filters = [...document.querySelectorAll('.filter')];
-const projects = [...document.querySelectorAll('.project')];
-filters.forEach(button => button.addEventListener('click', () => {
-  filters.forEach(filter => {
-    const selected = filter === button;
-    filter.classList.toggle('active', selected);
-    filter.setAttribute('aria-pressed', String(selected));
+const filterResult = document.querySelector('.filter-result');
+function filterWork(value, updateUrl = true) {
+  filters.forEach(button => {
+    const active = button.dataset.filter === value;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
   });
-  projects.forEach(project => {
-    project.hidden = button.dataset.filter !== 'all' && project.dataset.category !== button.dataset.filter;
-    if (!project.hidden) project.classList.remove('reveal-pending');
+  cards.forEach(card => { card.hidden = value !== 'all' && card.dataset.category !== value; });
+  document.querySelectorAll('.work-collection').forEach(collection => {
+    collection.hidden = !collection.querySelector('.work-card:not([hidden])');
   });
-}));
-
-const contentDetails = {
-  realestate: {
-    description: 'Property films and advisor-led content that help people understand the space, the location and the person behind the listing.',
-    steps: [
-      ['THE BRIEF', 'Start with the property.', 'We align on the property, audience, key selling points and the assets you need.'],
-      ['THE DIRECTION', 'Give the story a point of view.', 'A shot list and clear talking points keep the film focused and your delivery natural.'],
-      ['THE SHOOT', 'Make every frame count.', 'Interior details, movement and on-camera guidance bring the property to life.'],
-      ['THE DELIVERY', 'Ready for your channels.', 'Property films, reels and photography are delivered to the formats agreed in your brief.']
-    ],
-    service: 'Content Production'
-  },
-  founder: {
-    description: 'Put your expertise in front of the camera with clear ideas, a natural voice and direction that helps you feel comfortable on screen.',
-    steps: [
-      ['THE BRIEF', 'Find what you want to say.', 'We agree on the subjects, audience and purpose of the content.'],
-      ['THE DIRECTION', 'Keep it in your voice.', 'Talking points and on-camera coaching help you communicate clearly.'],
-      ['THE SHOOT', 'Build confidence on camera.', 'We guide pacing, delivery and framing throughout the session.'],
-      ['THE DELIVERY', 'A consistent visual presence.', 'Edited reels or longer videos with captions, sound and graphics within the agreed scope.']
-    ],
-    service: 'Monthly Content'
-  },
-  food: {
-    description: 'Food, atmosphere and the people behind the experience. Reels and photography for restaurants, cafés and hospitality brands.',
-    steps: [
-      ['THE BRIEF', 'Choose the experience.', 'A new menu, a launch or a content session starts with a clear list of priorities.'],
-      ['THE DIRECTION', 'Set the mood.', 'We plan the food, details and moments that tell the story of your venue.'],
-      ['THE SHOOT', 'Capture the atmosphere.', 'Food close-ups, preparation and the space itself give the content its character.'],
-      ['THE DELIVERY', 'Built around your brief.', 'Reels, stills and campaign formats are delivered according to the agreed plan.']
-    ],
-    service: 'Creative Campaign'
-  },
-  brand: {
-    description: 'Product photography and brand films shaped around the details, materials and character that make your product distinctive.',
-    steps: [
-      ['THE BRIEF', 'Understand the product.', 'We align on the audience, intended channels and what the visuals need to communicate.'],
-      ['THE DIRECTION', 'Create a visual language.', 'References, styling and lighting give the shoot a coherent direction.'],
-      ['THE SHOOT', 'Focus on the details.', 'Still photography, close-ups and motion bring texture and character into the frame.'],
-      ['THE DELIVERY', 'One clear set of assets.', 'Final images and films are prepared for the placements and formats in the agreed scope.']
-    ],
-    service: 'Photography / Brand Visuals'
+  const count = cards.filter(card => !card.hidden).length;
+  if (filterResult) filterResult.textContent = value === 'all' ? `Showing all ${count} projects` : `${count} ${count === 1 ? 'project' : 'projects'} · ${categories[value]}`;
+  if (updateUrl && filters.length) {
+    const url = new URL(location.href);
+    if (value === 'all') url.searchParams.delete('category'); else url.searchParams.set('category', value);
+    history.replaceState(null, '', url);
   }
-};
-const modal = document.querySelector('.case-modal');
-let activeProject;
-function openProject(project) {
-  activeProject = project;
-  const details = contentDetails[project.dataset.category];
-  modal.querySelector('.modal-title').textContent = project.dataset.project;
-  modal.querySelector('.lead').textContent = details.description;
-  const steps = modal.querySelector('.modal-steps');
-  steps.replaceChildren();
-  details.steps.forEach(([label, title, description], index) => {
-    const article = document.createElement('article');
-    [['b', `${String(index + 1).padStart(2, '0')} · ${label}`], ['h3', title], ['p', description]].forEach(([tag, text]) => {
-      const element = document.createElement(tag);
-      element.textContent = text;
-      article.append(element);
-    });
-    steps.append(article);
-  });
-  modal.showModal();
-  modal.scrollTop = 0;
-  document.body.classList.add('modal-open');
 }
-projects.forEach(project => {
-  project.addEventListener('click', () => openProject(project));
-  project.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault(); openProject(project);
-    }
-  });
+filters.forEach(button => button.addEventListener('click', () => filterWork(button.dataset.filter)));
+const initialCategory = new URLSearchParams(location.search).get('category');
+if (filters.length && initialCategory && categories[initialCategory]) filterWork(initialCategory, false);
+
+const viewer = document.querySelector('.project-viewer');
+let currentId;
+let galleryIds = [];
+let opener;
+function stopVideo() { viewer?.querySelector('iframe')?.remove(); }
+function renderProject(id) {
+  const project = projectMap.get(id);
+  if (!viewer || !project) return;
+  currentId = id;
+  stopVideo();
+  const media = viewer.querySelector('.viewer-media');
+  const image = viewer.querySelector('#viewer-image');
+  const play = viewer.querySelector('.viewer-play');
+  const source = viewer.querySelector('.viewer-original');
+  const roles = viewer.querySelector('.viewer-roles');
+  media.classList.toggle('is-reel', project.format === 'reel');
+  image.onerror = project.thumbnailFallback ? () => {
+    image.onerror = null;
+    image.src = project.thumbnailFallback;
+  } : null;
+  image.src = project.image;
+  image.alt = `${project.title} — frame from Ammer Afaq’s portfolio`;
+  image.hidden = false;
+  viewer.querySelector('#viewer-title').textContent = project.title;
+  viewer.querySelector('#viewer-category').textContent = `${categories[project.category]} / ${project.url ? project.format : 'Portfolio still'}`;
+  viewer.querySelector('#viewer-description').textContent = project.description;
+  roles.replaceChildren(...project.roles.map(role => {
+    const label = document.createElement('span'); label.textContent = role; return label;
+  }));
+  source.hidden = !project.url;
+  if (project.url) {
+    source.href = project.url;
+    source.replaceChildren(document.createTextNode(`Watch on ${project.platform} `));
+    const arrow = document.createElement('span'); arrow.textContent = '↗'; arrow.setAttribute('aria-hidden','true'); source.append(arrow);
+  } else source.removeAttribute('href');
+  play.hidden = project.platform !== 'YouTube' || !project.url;
+  viewer.querySelector('.viewer-count').textContent = `${String(galleryIds.indexOf(id) + 1).padStart(2, '0')} / ${String(galleryIds.length).padStart(2, '0')}`;
+  viewer.scrollTop = 0;
+}
+function openProject(id, trigger) {
+  galleryIds = cards.filter(card => !card.hidden).map(card => card.dataset.id);
+  opener = trigger;
+  renderProject(id);
+  viewer.showModal();
+  document.body.classList.add('modal-open');
+  viewer.querySelector('.viewer-close').focus();
+}
+document.querySelectorAll('.project-open').forEach(button => {
+  button.addEventListener('click', () => openProject(button.dataset.project, button));
 });
-modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
-modal.addEventListener('close', () => document.body.classList.remove('modal-open'));
-modal.querySelector('.modal-cta').addEventListener('click', () => {
-  document.querySelector('[name="service"]').value = contentDetails[activeProject.dataset.category].service;
-  modal.close();
-  document.querySelector('[name="name"]').focus({ preventScroll: true });
+viewer?.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+viewer?.addEventListener('close', () => {
+  stopVideo(); document.body.classList.remove('modal-open');
+  if (opener?.isConnected) opener.focus({preventScroll:true});
+});
+function advanceProject(delta) {
+  const nextIndex = (galleryIds.indexOf(currentId) + delta + galleryIds.length) % galleryIds.length;
+  renderProject(galleryIds[nextIndex]);
+}
+viewer?.querySelector('.viewer-prev').addEventListener('click', () => advanceProject(-1));
+viewer?.querySelector('.viewer-next').addEventListener('click', () => advanceProject(1));
+viewer?.addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    event.preventDefault(); advanceProject(event.key === 'ArrowRight' ? 1 : -1);
+  }
+});
+viewer?.querySelector('.viewer-play').addEventListener('click', () => {
+  const project = projectMap.get(currentId);
+  const url = new URL(project.url);
+  const id = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
+  if (!id || !/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+  const iframe = document.createElement('iframe');
+  iframe.title = project.title;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+  iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  iframe.allowFullscreen = true;
+  viewer.querySelector('#viewer-image').hidden = true;
+  viewer.querySelector('.viewer-play').hidden = true;
+  viewer.querySelector('.viewer-media').append(iframe);
 });
 
 const tabs = [...document.querySelectorAll('.workspace-tab')];
@@ -158,7 +171,7 @@ function selectTab(tab) {
     item.setAttribute('aria-selected', String(selected));
     item.tabIndex = selected ? 0 : -1;
   });
-  panels.forEach(panel => { panel.classList.toggle('active', panel.id === tab.dataset.panel); });
+  panels.forEach(panel => panel.classList.toggle('active', panel.id === tab.dataset.panel));
 }
 tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => selectTab(tab));
@@ -174,35 +187,23 @@ tabs.forEach((tab, index) => {
 });
 
 const form = document.querySelector('.project-form');
-const submitButton = form.querySelector('[type="submit"]');
-const formStatus = form.querySelector('.form-status');
-form.addEventListener('submit', async event => {
+form?.addEventListener('submit', async event => {
   event.preventDefault();
+  const submitButton = form.querySelector('[type="submit"]');
+  const status = form.querySelector('.form-status');
   if (submitButton.disabled) return;
-  formStatus.hidden = true;
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending your brief…';
-  form.setAttribute('aria-busy', 'true');
+  submitButton.disabled = true; submitButton.textContent = 'Sending your brief…'; status.hidden = true;
+  form.setAttribute('aria-busy','true');
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20000);
   try {
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString(),
-      signal: controller.signal
-    });
+    const response = await fetch('/', {method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString(),signal:controller.signal});
     if (!response.ok) throw new Error('Submission failed');
-    window.location.assign(form.action);
+    location.assign(form.action);
   } catch (error) {
-    formStatus.textContent = error.name === 'AbortError'
-      ? 'We could not confirm your submission. Please try again or email thesocialbuzz@gmail.com.'
-      : 'Your brief could not be sent. Please try again or email thesocialbuzz@gmail.com.';
-    formStatus.hidden = false;
+    status.textContent = error.name === 'AbortError' ? 'We could not confirm your submission. Please try again or email thesocialbuzz@gmail.com.' : 'Your brief could not be sent. Please try again or email thesocialbuzz@gmail.com.';
+    status.hidden = false;
   } finally {
-    clearTimeout(timeout);
-    submitButton.disabled = false;
-    submitButton.textContent = 'Send project brief ↗';
-    form.removeAttribute('aria-busy');
+    clearTimeout(timeout); submitButton.disabled = false; submitButton.textContent = 'Send project brief ↗'; form.removeAttribute('aria-busy');
   }
 });

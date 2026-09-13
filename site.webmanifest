@@ -1,9 +1,1 @@
-{
-  "name": "The Social Buzz",
-  "short_name": "Social Buzz",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#070707",
-  "theme_color": "#070707",
-  "icons": []
-}
+{"name":"The Social Buzz","short_name":"Social Buzz","start_url":"/","display":"standalone","background_color":"#06070b","theme_color":"#1438b8","icons":[{"src":"/assets/brand/favicon.png","sizes":"128x128","type":"image/png"}]}

@@ -1,0 +1,658 @@
+{
+  "projects": [
+    {
+      "id": "work-01",
+      "title": "A beach mansion on Palm Jumeirah",
+      "category": "realestate",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "https://i.ytimg.com/vi/k3sImhVtARQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360,
+      "url": "https://youtu.be/k3sImhVtARQ?si=NPoe5cs499ttAjSD",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 3,
+      "sourceXref": 25802,
+      "sourcePosition": 1,
+      "publishedBy": "Farooq Syed",
+      "sourceNote": "The first PDF screenshot depicts private aviation, while its hyperlink points to the Palm Jumeirah beach mansion film. The linked film title is used here. The public card uses the linked video’s official YouTube thumbnail, with the supplied brand artwork as its fallback. The original PDF screenshot is retained as sourceImage.",
+      "sourceImage": "/assets/work/work-01.webp",
+      "thumbnailFallback": "/assets/brand/brand-gradient.webp"
+    },
+    {
+      "id": "work-02",
+      "title": "A crypto millionaire’s Jumeirah Golf Estates home",
+      "category": "realestate",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "/assets/work/work-02.webp",
+      "width": 1280,
+      "height": 720,
+      "url": "https://youtu.be/Xhk6kYhG_aE?si=8ja8V2l6RDe9UEFX",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 3,
+      "sourceXref": 25801,
+      "sourcePosition": 2,
+      "publishedBy": "Farooq Syed"
+    },
+    {
+      "id": "work-03",
+      "title": "A $10 million home in Jumeirah Islands",
+      "category": "realestate",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "/assets/work/work-03.webp",
+      "width": 1280,
+      "height": 720,
+      "url": "https://youtu.be/xBA7RFnYwSA?si=dqIUo0LlHKrOFQYb",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 4,
+      "sourceXref": 25810,
+      "sourcePosition": 1,
+      "publishedBy": "Farooq Syed"
+    },
+    {
+      "id": "work-04",
+      "title": "Ultra luxury near the Burj Khalifa",
+      "category": "realestate",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "/assets/work/work-04.webp",
+      "width": 1280,
+      "height": 720,
+      "url": "https://youtu.be/FY2NTW87wMA?si=MpGZX3uVaWj-IXJe",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 4,
+      "sourceXref": 25811,
+      "sourcePosition": 2,
+      "publishedBy": "Luxury Top Listings"
+    },
+    {
+      "id": "work-05",
+      "title": "Inside a private megayacht",
+      "category": "lifestyle",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "/assets/work/work-05.webp",
+      "width": 1280,
+      "height": 720,
+      "url": "https://youtu.be/lGl_oyYb_co?si=I1eUI7cCMuiS0xJb",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 5,
+      "sourceXref": 25820,
+      "sourcePosition": 1,
+      "publishedBy": "Farooq Syed"
+    },
+    {
+      "id": "work-06",
+      "title": "The world of rare supercars",
+      "category": "lifestyle",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "/assets/work/work-06.webp",
+      "width": 1280,
+      "height": 720,
+      "url": "https://youtu.be/eEbOl0cSbVg?si=ujNfpbbqP-X8Jx__",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 5,
+      "sourceXref": 25819,
+      "sourcePosition": 2,
+      "publishedBy": "Farooq Syed"
+    },
+    {
+      "id": "work-07",
+      "title": "A flying palace: inside a private jet",
+      "category": "lifestyle",
+      "format": "film",
+      "platform": "YouTube",
+      "image": "/assets/work/work-07.webp",
+      "width": 1280,
+      "height": 720,
+      "url": "https://youtu.be/1LRKLkVp1Us?si=VETuEU37Sd0MVmGT",
+      "roles": [
+        "Creative direction",
+        "Concept planning",
+        "Filmmaking",
+        "Post-production"
+      ],
+      "description": "An end-to-end film from Ammer Afaq’s portfolio, bringing concept planning, creative direction, filming and post-production into one story.",
+      "sourcePage": 5,
+      "sourceXref": 25821,
+      "sourcePosition": 3,
+      "publishedBy": "Farooq Syed"
+    },
+    {
+      "id": "work-08",
+      "title": "Dubai property, explained",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-08.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DR1kWjvj19P/?igsh=MWRuMjVlbmx2NnVyeA==",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 6,
+      "sourceXref": 24404,
+      "sourcePosition": 1
+    },
+    {
+      "id": "work-09",
+      "title": "A home with everything",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-09.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DLwn8Pwz65b/?igsh=MWR0a3JtaGtrOWpwZA==",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 6,
+      "sourceXref": 24405,
+      "sourcePosition": 2
+    },
+    {
+      "id": "work-10",
+      "title": "Property investment insights",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-10.webp",
+      "width": 720,
+      "height": 1280,
+      "url": "https://www.instagram.com/reel/DQtrf6wDB7L/?igsh=ODMwNHV5d3JmZXBt",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 6,
+      "sourceXref": 24403,
+      "sourcePosition": 3
+    },
+    {
+      "id": "work-11",
+      "title": "A different perspective",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-11.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DOp-tJwjz5_/?igsh=MWRydWdhYXdldzFhZA==",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 6,
+      "sourceXref": 24402,
+      "sourcePosition": 4
+    },
+    {
+      "id": "work-12",
+      "title": "Dubai in motion",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-12.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DOA_Z-5D-Me/?igsh=NWg3bTJmZ3Fwa2F2",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 7,
+      "sourceXref": 24414,
+      "sourcePosition": 1
+    },
+    {
+      "id": "work-13",
+      "title": "From California to Dubai",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-13.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DNx2CFCXmA6/?igsh=MTIzcmgyNWRtYWp4cg%3D%3D",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 7,
+      "sourceXref": 24416,
+      "sourcePosition": 2
+    },
+    {
+      "id": "work-14",
+      "title": "Inside the Reone team",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-14.webp",
+      "width": 720,
+      "height": 1280,
+      "url": null,
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 7,
+      "sourceXref": 24417,
+      "sourcePosition": 3
+    },
+    {
+      "id": "work-15",
+      "title": "The Alma villa tour",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-15.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DO8s48ZE3jT/?igsh=bXd0ZHhuZGowZDJn",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 7,
+      "sourceXref": 24415,
+      "sourcePosition": 4
+    },
+    {
+      "id": "work-16",
+      "title": "PRYPCO: a new way to invest",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-16.webp",
+      "width": 810,
+      "height": 1440,
+      "url": "https://www.instagram.com/reel/DNQOfSRvK0c/?igsh=MTlhNGx2aXg4cW45eA%3D%3D",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 8,
+      "sourceXref": 24425,
+      "sourcePosition": 1
+    },
+    {
+      "id": "work-17",
+      "title": "The off-plan buying mistake",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-17.webp",
+      "width": 810,
+      "height": 1440,
+      "url": "https://www.instagram.com/reel/DNdrdpRsmai/?igsh=MTVkNW1kNDZ4b2N5bg%3D%3D",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 8,
+      "sourceXref": 24428,
+      "sourcePosition": 2
+    },
+    {
+      "id": "work-18",
+      "title": "Sobha Central, on camera",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-18.webp",
+      "width": 810,
+      "height": 1440,
+      "url": "https://www.instagram.com/reel/DKJ0WMOvo75/?igsh=aTA4eTM5ZWoyMGY5",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 8,
+      "sourceXref": 24427,
+      "sourcePosition": 3
+    },
+    {
+      "id": "work-19",
+      "title": "Valencia villa: park views",
+      "category": "realestate",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-19.webp",
+      "width": 810,
+      "height": 1440,
+      "url": "https://www.instagram.com/reel/DLE-qEavDHg/?igsh=aW1hbmEwdG1iMQ%3D%3D",
+      "roles": [
+        "Scriptwriting",
+        "Shoot planning",
+        "Production",
+        "Editing"
+      ],
+      "description": "Property storytelling made for social. Ammer’s work spans the script, shoot plan, on-camera direction, production and final edit.",
+      "sourcePage": 8,
+      "sourceXref": 24426,
+      "sourcePosition": 4
+    },
+    {
+      "id": "work-20",
+      "title": "The Springfield recruitment film",
+      "category": "recruitment",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-20.webp",
+      "width": 288,
+      "height": 512,
+      "url": "https://www.instagram.com/reel/C2j-6YgBewT/?igsh=dDA3eDByeGs0bDZs",
+      "roles": [
+        "Content planning",
+        "Videography",
+        "Editing"
+      ],
+      "description": "Short-form recruitment content created to bring a team’s message to social media.",
+      "sourcePage": 9,
+      "sourceXref": 24438,
+      "sourcePosition": 1
+    },
+    {
+      "id": "work-21",
+      "title": "White, in motion",
+      "category": "fashion",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-21.webp",
+      "width": 810,
+      "height": 1440,
+      "url": "https://www.instagram.com/reel/DUydKC7EywA/?igsh=MW04Y2lkY3RyaW1qZg%3D%3D",
+      "roles": [
+        "Content planning",
+        "Visual storytelling",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "Visual storytelling for clothing and lifestyle brands, with content planning, production and editing shaped around the brand.",
+      "sourcePage": 10,
+      "sourceXref": 24449,
+      "sourcePosition": 1
+    },
+    {
+      "id": "work-22",
+      "title": "An editorial in black",
+      "category": "fashion",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-22.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DWTwNcVDXAP/?igsh=ZGRmdDlsejZ3cGw%3D",
+      "roles": [
+        "Content planning",
+        "Visual storytelling",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "Visual storytelling for clothing and lifestyle brands, with content planning, production and editing shaped around the brand.",
+      "sourcePage": 10,
+      "sourceXref": 24446,
+      "sourcePosition": 2
+    },
+    {
+      "id": "work-23",
+      "title": "The detail is the story",
+      "category": "fashion",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-23.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DUlLOi9jYgw/?igsh=dm5tZno3ajJjNnU0",
+      "roles": [
+        "Content planning",
+        "Visual storytelling",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "Visual storytelling for clothing and lifestyle brands, with content planning, production and editing shaped around the brand.",
+      "sourcePage": 10,
+      "sourceXref": 24448,
+      "sourcePosition": 3
+    },
+    {
+      "id": "work-24",
+      "title": "A taste of the lifestyle",
+      "category": "fashion",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-24.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DUahVDijT_n/?igsh=N2l6eGsyZXVhamVs",
+      "roles": [
+        "Content planning",
+        "Visual storytelling",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "Visual storytelling for clothing and lifestyle brands, with content planning, production and editing shaped around the brand.",
+      "sourcePage": 10,
+      "sourceXref": 24447,
+      "sourcePosition": 4
+    },
+    {
+      "id": "work-25",
+      "title": "Dubai, in the driver’s seat",
+      "category": "lifestyle",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-25.webp",
+      "width": 720,
+      "height": 1280,
+      "url": "https://www.instagram.com/reel/Cztkm7iLf3N/?igsh=aW5uOGk4MWVuNTB2",
+      "roles": [
+        "Creative planning",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "A different view of Dubai’s lifestyle and culture, planned and created by Ammer from the first idea to the final edit.",
+      "sourcePage": 11,
+      "sourceXref": 24457,
+      "sourcePosition": 1
+    },
+    {
+      "id": "work-26",
+      "title": "On the water",
+      "category": "lifestyle",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-26.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DLK75R8zwi0/?igsh=ajBmdWEyajh4ZTJr",
+      "roles": [
+        "Creative planning",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "A different view of Dubai’s lifestyle and culture, planned and created by Ammer from the first idea to the final edit.",
+      "sourcePage": 11,
+      "sourceXref": 24458,
+      "sourcePosition": 2
+    },
+    {
+      "id": "work-27",
+      "title": "A quieter side of Dubai",
+      "category": "lifestyle",
+      "format": "reel",
+      "platform": "Instagram",
+      "image": "/assets/work/work-27.webp",
+      "width": 640,
+      "height": 1136,
+      "url": "https://www.instagram.com/reel/DVs9ovyAmwJ/?igsh=MXBmYXo5dng3cXVpaQ%3D%3D",
+      "roles": [
+        "Creative planning",
+        "Filmmaking",
+        "Editing"
+      ],
+      "description": "A different view of Dubai’s lifestyle and culture, planned and created by Ammer from the first idea to the final edit.",
+      "sourcePage": 11,
+      "sourceXref": 24459,
+      "sourcePosition": 3
+    }
+  ],
+  "press": [
+    {
+      "id": "khaleej-new-year",
+      "publisher": "Khaleej Times",
+      "title": "Finding connection in a new city",
+      "description": "A feature on the experience of spending a first New Year in the UAE.",
+      "url": "https://www.khaleejtimes.com/uae/its-a-lonely-new-year-for-some-new-uae-expats",
+      "sourcePage": 12,
+      "image": "/assets/press/khaleej-new-year.webp",
+      "width": 1000,
+      "height": 636
+    },
+    {
+      "id": "khaleej-ramadan",
+      "publisher": "Khaleej Times",
+      "title": "Ramadan, away from home",
+      "description": "Sharing the feeling of Ramadan as an expat in the UAE.",
+      "url": "https://www.khaleejtimes.com/ramadan/lonely-ramadan-for-uae-expats-from-missing-mums-food-to-sharing-iftar-residents-long-for-families?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn4vsNDgNdYS4bK9FLZ_-gdGec40GIcpPKskHr8VlAnptHAAvdbuuT-2SgrT8_",
+      "sourcePage": 12,
+      "image": "/assets/press/khaleej-ramadan.webp",
+      "width": 1000,
+      "height": 661
+    },
+    {
+      "id": "uae-stories",
+      "publisher": "UAE Stories",
+      "title": "From humble beginnings to filmmaking",
+      "description": "The story behind Ammer’s creative journey and work in the UAE.",
+      "url": "https://uaestories.com/ammer-afaq-from-humble-beginnings-to-filmmaking/",
+      "sourcePage": 12,
+      "image": "/assets/press/uae-stories.webp",
+      "width": 1000,
+      "height": 510
+    },
+    {
+      "id": "lovin-abu-dhabi",
+      "publisher": "Lovin Abu Dhabi",
+      "title": "Finding winter in a UAE summer",
+      "description": "Ammer’s lifestyle content featured by Lovin Abu Dhabi.",
+      "url": "https://www.instagram.com/reel/DNGPJsqsGc-/?igsh=ZTE2a3VzYzNpeDNz",
+      "sourcePage": 13,
+      "image": "/assets/press/lovin-abu-dhabi.webp",
+      "width": 692,
+      "height": 1500
+    }
+  ],
+  "founder": {
+    "name": "Ammer Afaq",
+    "title": "Filmmaker, Founder & Creative Marketing Strategist",
+    "email": "ammer.afaq@gmail.com",
+    "phone": "+971 50 178 7917",
+    "phoneHref": "tel:+971501787917",
+    "socials": [
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/filmsbyafaq/"
+      },
+      {
+        "label": "YouTube",
+        "url": "https://www.youtube.com/@filmsbyafaq"
+      },
+      {
+        "label": "TikTok",
+        "url": "https://www.tiktok.com/@filmsbyafaq"
+      },
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/filmsbyafaq"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/filmsbyafaq/"
+      }
+    ]
+  },
+  "company": {
+    "email": "thesocialbuzz@gmail.com",
+    "instagram": "https://www.instagram.com/thesocialbuzzzz/",
+    "linkedin": "https://www.linkedin.com/company/thesocialbuzz/",
+    "websiteLabel": "thesocialbuzz.ae"
+  }
+}
