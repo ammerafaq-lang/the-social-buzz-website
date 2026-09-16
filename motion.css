@@ -66,7 +66,7 @@
 .page-shutter.leaving{visibility:visible}.page-shutter.leaving>i{transform:scaleY(1)}
 .page-arrival main{animation:page-arrive .8s var(--ease-buzz)}
 .motion-paused .motion-word,.motion-paused .reveal-object{opacity:1!important;transform:none!important;translate:none!important}.motion-paused .reveal-pending .work-image,.motion-paused .founder-photo,.motion-paused .press-image{clip-path:none!important}
-.motion-paused *, .motion-paused *:before,.motion-paused *:after{animation-play-state:paused!important;transition-duration:0s!important;transition-delay:0s!important}
+.motion-paused *, .motion-paused *:before,.motion-paused *:after{animation:none!important;transition-duration:0s!important;transition-delay:0s!important}
 .motion-paused .buzz-cursor,.motion-paused .cursor-point{display:none}.motion-paused .page-shutter{visibility:hidden}.motion-paused .stage-space{transform:none}
 body:not(.motion-active) .creative-stage *{animation-play-state:paused}
 .stage-offscreen *{animation-play-state:paused!important}
