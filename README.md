@@ -43,3 +43,9 @@ The `project-enquiry` Netlify form includes a spam honeypot, native validation, 
 Routes: `/`, `/work/`, `/founder/`, `/privacy`, `/success`, and the custom 404 page. `/home` redirects to `/`. The build generates the sitemap and robots file.
 
 Do not commit credentials, local `.netlify` state, environment files or generated output.
+
+## Motion design
+
+The home hero uses `src/creative-stage.html`: original logo artwork, illustrated strategy/production/connection controls, orbiting signals and a pointer-responsive composition. It contains no portfolio portraits. `motion.css` and `motion.js` provide word reveals, shaped image reveals, cursor feedback, magnetic buttons, page shutters and ambient movement across the three main pages.
+
+Motion can be paused using the persistent on-screen control. Device reduced-motion preferences take priority. Content remains readable without JavaScript, keyboard focus reveals its target, native scrolling is preserved, and offscreen hero animation pauses. No animation libraries, generated raster art, or additional third-party scripts are required.
