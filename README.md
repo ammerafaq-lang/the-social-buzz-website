@@ -2,7 +2,8 @@
 
 Creative agency website and Ammer Afaq’s portfolio, built from the supplied 2026 portfolio PDF, original logos and business card.
 
-- Live website: https://the-social-buzz.netlify.app/
+- Live website: https://socialbuzzuae.com/
+- Netlify URL: https://the-social-buzz.netlify.app/
 - Repository: https://github.com/ammerafaq-lang/the-social-buzz-website
 - Production branch: `main`
 - Netlify project: `the-social-buzz`
@@ -34,7 +35,7 @@ All 26 project hyperlinks present in the PDF are preserved. Several were stored 
 
 Film titles were checked against the linked YouTube videos. The first PDF screenshot depicts a private jet, but its hyperlink leads to a Palm Jumeirah mansion film; the public card begins with supplied brand artwork and upgrades to the linked film’s official YouTube thumbnail after it loads. The original screenshot and the discrepancy remain recorded in the data. Duplicate overlapping annotations on the press page were resolved using the destinations matching each article screenshot. The four press features link to the original articles or reel.
 
-Founder contact details and the unified `@filmsbyafaq` social handle come from the PDF. Company email, Instagram, LinkedIn handle and domain label come from the supplied business card. `thesocialbuzz.ae` is brand text; the connected production domain remains the Netlify URL above. Update canonical metadata in the build if a custom domain is connected.
+Founder contact details and the unified `@filmsbyafaq` social handle come from the PDF. Company email, Instagram and LinkedIn handle come from the supplied business card. The card used the planned domain `thesocialbuzz.ae`; the connected production domain is now `socialbuzzuae.com`, verified in Netlify on 16 September 2026. Canonical metadata, the sitemap and footer use that domain.
 
 ## Enquiries and routes
 
