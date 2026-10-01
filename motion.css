@@ -92,3 +92,9 @@ body:not(.motion-active) .creative-stage *{animation-play-state:paused}
 
 @media(max-width:560px){.stage-space{aspect-ratio:1/1.25}}
 @media(max-width:380px){.node-caption{display:none}.node-number{font-size:6px}.creative-node strong{font-size:13px}}
+
+/* Keep the conversion-led hero and CTA system authoritative over legacy motion styling. */
+.hero-v2{background:linear-gradient(118deg,#05070c 18%,#091128 58%,#1438b8 145%)}
+.hero-v2:after{opacity:1;background-image:linear-gradient(#a9baf90a 1px,transparent 1px),linear-gradient(90deg,#a9baf90a 1px,transparent 1px);background-size:62px 62px;mask-image:linear-gradient(90deg,#0008,transparent 76%)}
+.btn:hover>span{transform:rotate(45deg)!important}
+.btn-quiet:hover>span{transform:none!important}
