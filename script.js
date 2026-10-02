@@ -106,6 +106,8 @@ function renderProject(id) {
   viewer.querySelector('#viewer-title').textContent = project.title;
   viewer.querySelector('#viewer-category').textContent = `${categories[project.category]} / ${project.url ? project.format : 'Portfolio still'}`;
   viewer.querySelector('#viewer-description').textContent = project.description;
+  const detailLink = viewer.querySelector('.viewer-detail');
+  if (detailLink) detailLink.href = '/work/' + project.id + '/';
   roles.replaceChildren(...project.roles.map(role => {
     const label = document.createElement('span'); label.textContent = role; return label;
   }));
@@ -187,6 +189,11 @@ tabs.forEach((tab, index) => {
 });
 
 const form = document.querySelector('.project-form');
+const enquiryParams = new URLSearchParams(location.search);
+const serviceChoices = {strategy:'Strategy & creative direction',production:'One-off production',monthly:'Monthly content system',social:'Social media partnership',founder:'Founder / personal brand content'};
+if (form && serviceChoices[enquiryParams.get('service')]) form.elements.service.value = serviceChoices[enquiryParams.get('service')];
+const referenceProject = projectMap.get(enquiryParams.get('project'));
+if (form && referenceProject) form.elements.message.value = 'I’m interested in a project like “' + referenceProject.title + '”.\n\nMy goal: ';
 form?.addEventListener('submit', async event => {
   event.preventDefault();
   const submitButton = form.querySelector('[type="submit"]');
